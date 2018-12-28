@@ -1,0 +1,96 @@
+<section class="content-wrap">
+    <div class="container">
+        <h3 class="text-center">
+            <strong>Fill Out the Form to Get GL Information</strong>
+        </h3>
+        <form class="form-horizontal" name="glform" id="glform">
+            <div class="form-group">
+                <label for="Invoice Source Document" class="col-sm-2 control-label">Invoice Source Document</label>
+                <div class="col-sm-4">
+                    <select [(ngModel)]="nonpo.invoice_source_document" class="form-control inline-select" name="invoice_source_document">
+                        <option value="Non-PO">Non-PO</option>
+                    </select>
+                </div>
+                <label for="Line Type" class="col-sm-2 control-label">Line Type</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" [(ngModel)]="nonpo.line_type" name="line_type" placeholder="Line Type">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Supplier - Supplier Id (L1)" class="col-sm-2 control-label">Supplier - Supplier Id (L1)</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" [(ngModel)]="nonpo.supplier_id" name="supplier_id"
+                        placeholder="Supplier - Supplier Id (L1)">
+                </div>
+                <label for="Cost Center - Cost center ID" class="col-sm-2 control-label">Cost Center - Cost center
+                    ID</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" [(ngModel)]="nonpo.cost_center_id" name="cost_center_id"
+                        placeholder="Cost Center - Cost center ID">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Company Code - Company Code" class="col-sm-2 control-label">Company Code - Company Code</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" [(ngModel)]="nonpo.company_code" name="company_code"
+                        placeholder="Company Code - Company Code">
+                </div>
+                <label for="Profit Center ID" class="col-sm-2 control-label">Profit Center ID</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" [(ngModel)]="nonpo.profit_center_id" name="profit_center_id"
+                        placeholder="Profit Center ID">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Invoice Spend" class="col-sm-2 control-label">Invoice Spend</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" [(ngModel)]="nonpo.invoice_spend" name="invoice_spend"
+                        placeholder="Invoice Spend">
+                </div>
+                <label for="WBSElement - WBSElement Id" class="col-sm-2 control-label">WBSElement - WBSElement Id</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" [(ngModel)]="nonpo.wbs_id" name="wbs_id" placeholder="WBSElement - WBSElement Id">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Country" class="col-sm-2 control-label">Country</label>
+                <div class="col-sm-4">
+                    <select class="form-control inline-select" name="country" [(ngModel)]="country">
+                        <option *ngFor="let country of countries;let i = index;" [value]="country">{{country}}</option>
+                    </select>
+                </div>
+                <label for="Description" class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-4">
+                    <textarea [(ngModel)]="nonpo.description" name="description" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="button" (click)="getGLR()" id="GetGL" class="btn btn-primary btn-lg">Get GL Account</button>
+                    <button type="reset" (click)="reset()" id="clear" class="btn btn-lg">Reset All Information</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div [hidden]="!showResult" class="container">
+        <h3 class="text-center">
+            <strong>Get GL Information</strong>
+        </h3>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="Recommended GL Account ID" class="col-sm-2 control-label">Recommended GL Account ID</label>
+                <div class="col-sm-4">
+                    <p id="glr" class="form-control-static">{{result?.data_list[0].recommended_gl_account_id}}</p>
+                </div>
+                <label for="Confidence" class="col-sm-2 control-label">Confidence</label>
+                <div class="col-sm-4">
+                    <p id="confidence" class="form-control-static">{{result?.data_list[0].confidence}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div [hidden]="!loading" class="dialog">
+    <img src="./assets/images/ajax-loader.gif" alt="">
+</div>

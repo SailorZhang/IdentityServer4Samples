@@ -1,0 +1,37 @@
+.not-authorized-container {
+    min-height: 25em;
+}
+
+.not-authorized-container h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.not-authorized-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.not-authorized-text p {
+    padding-bottom: 1em;
+}
+
+.not-authorized-text a {
+    text-transform: uppercase;
+    background-color: #FFF;
+    border-radius: 2px;
+    color: #888;
+    border: 1px solid #000;
+    font-family: 'Graphik Black','Arial Black',Sans-Serif;
+    font-size: 14px;
+    padding: 1em 2em;
+}
+
+.not-authorized-text a:hover {
+    text-decoration: none;
+    color: #000;
+}

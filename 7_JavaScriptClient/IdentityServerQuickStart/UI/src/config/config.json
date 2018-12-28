@@ -1,0 +1,26 @@
+{
+  "eso": {
+    "loginUrl": "http://localhost:5000/connect/authorize",
+    "logoutUrl": "http://localhost:5000/connect/endsession",
+    "clientId": "js",
+    "oidc": true,
+    "redirectUri": "http://localhost:9091/",
+    "scope": "openid profile api1",
+    "response_type": "id_token token",
+    "issuer": "http://localhost:5000",
+    "redirectSubUri": "/demo/glr",
+    "enabled": true
+  },
+  "modelServer": {
+    "address": "https://bi11.ciostage.accenture.com/service/AliceService",
+    "port": "",
+    "resource": "/AliceService-service/AliceService",
+    "serviceID": {
+      "NONPO": "ACBDF368-D99E-40B1-9EE9-3F942EADFAE5",
+      "PO": "95DF43D8-5818-4D41-AB38-FFDE8E70BFB9"
+    }
+  },
+  "common": {
+    "inputToken": false
+  }
+}

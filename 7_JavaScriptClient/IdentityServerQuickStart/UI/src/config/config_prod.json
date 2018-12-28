@@ -1,0 +1,26 @@
+{
+  "eso": {
+    "loginUrl": "https://federation-sts.accenture.com/oauth/ls/connect/authorize",
+    "logoutUrl": "https://federation-sts.accenture.com/oauth/ls/connect/endsession",
+    "clientId": "4985.elstudio.bi11.web",
+    "oidc": true,
+    "redirectUri": "https://bi11.accenture.com",
+    "scope": "read_eistudio user_profile read_cap_modelmanager",
+    "responseType": "token id_token",
+    "issuer": "urn:Accenture:EmbeddedSTS",
+    "redirectSubUri": "https://bi11.accenture.com/demo/glr/",
+    "enabled": true
+  },
+  "modelServer": {
+    "address": "https://bi12.ciostage.accenture.com",
+    "port": "",
+    "resource": "/service/modelmanager/service",
+    "serviceID": {
+      "NONPO": "ACBDF368-D99E-40B1-9EE9-3F942EADFAE5",
+      "PO": "95DF43D8-5818-4D41-AB38-FFDE8E70BFB9"
+    }
+  },
+  "common": {
+    "inputToken": false
+  }
+}

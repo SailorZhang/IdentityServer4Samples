@@ -1,0 +1,30 @@
+<header class="main-header">
+  <img src="./assets/images/EI-Studio-LOGO.png" alt="">
+  <span class="title">
+    GL Recommendation Tool
+  </span>
+</header>
+<nav class="main-navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="navbar-header">
+          <span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars"></i>
+          </span>
+        </div>
+        <div class="collapse navbar-collapse show" id="main-menu">
+          <ul class="menu">
+            <li [ngClass]="{'nav-current': url=='/'}" role="presentation">
+              <a href="javascript:;" (click)="navigateTo()">Non-PO Single API</a>
+            </li>
+            <li [ngClass]="{'nav-current': url=='/po'}" role="presentation">
+              <a href="javascript:;" (click)="navigateTo('po')">PO Single API</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

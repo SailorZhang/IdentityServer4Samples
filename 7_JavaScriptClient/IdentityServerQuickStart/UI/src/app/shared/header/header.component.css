@@ -1,0 +1,22 @@
+/* Custom page header */
+.header {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    background: #fff;
+}
+
+.header .image-header {
+    margin-left: 1.5em;
+}
+
+.header .image-header img {
+    display: inline-block;
+    height: 28px;
+    position: relative;
+    width: 100px;
+    margin: auto;
+}
