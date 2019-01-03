@@ -20,7 +20,7 @@ namespace ClientQuickStart
             }
 
             // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client","123456");
             var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("sailor", "sailor", "api1");
 
             if (tokenResponse.IsError)
@@ -46,6 +46,8 @@ namespace ClientQuickStart
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(JArray.Parse(content));
             }
+
+            Console.ReadKey();
         }
     }
 }
