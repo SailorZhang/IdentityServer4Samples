@@ -40,7 +40,7 @@ namespace IdentityServerQuickStart
             {
                 new Client
                 {
-                    ClientId="ro.client",
+                    ClientId="wx_xiaochengxu",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     ClientSecrets =
                     {
